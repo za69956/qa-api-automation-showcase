@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Invoices</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #1f2933; }
+    form { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)) auto; gap: 8px; align-items: start; }
+    label { display: flex; flex-direction: column; font-size: 13px; gap: 4px; }
+    .error { color: #b42318; font-size: 12px; min-height: 14px; }
+    table { border-collapse: collapse; margin-top: 16px; width: 100%; }
+    th, td { border-bottom: 1px solid #ddd; padding: 6px 8px; text-align: left; }
+    td.num, th.num { text-align: right; }
+    #summary { margin-top: 12px; font-weight: bold; }
+    #banner { color: #b42318; margin-top: 8px; min-height: 18px; }
+  </style>
+</head>
+<body>
+  <h1>Invoices</h1>
+  <form id="invoice-form" novalidate>
+    <label>Invoice number<input name="number" placeholder="INV-0001"><span class="error" data-error="number"></span></label>
+    <label>Client<input name="client"><span class="error" data-error="client"></span></label>
+    <label>Net amount<input name="net" inputmode="decimal"><span class="error" data-error="net"></span></label>
+    <label>VAT rate
+      <select name="vatRate"><option value="20">20%</option><option value="5">5%</option><option value="0">0%</option></select>
+      <span class="error" data-error="vatRate"></span>
+    </label>
+    <button type="submit">Add invoice</button>
+  </form>
+  <div id="banner" role="alert"></div>
+  <table aria-label="Invoices">
+    <thead><tr><th>Number</th><th>Client</th><th class="num">Net</th><th class="num">VAT</th><th class="num">Gross</th><th></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <div id="summary" data-testid="summary"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

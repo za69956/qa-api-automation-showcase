@@ -30,6 +30,9 @@ skip_parts = {
     ".pytest_cache",
     ".venv",
     "venv",
+    "node_modules",
+    "playwright-report",
+    "test-results",
 }
 
 hits = []

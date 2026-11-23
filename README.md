@@ -33,6 +33,10 @@ Green PnL is not enough.
 A bot can make money in USDT and still fail the HODL benchmark.
 ```
 
+## Also in this repo: Playwright TypeScript E2E suite
+
+`web-e2e-playwright-ts/` contains a UI + API + consistency test suite written in Playwright (TypeScript) against a small local invoice app, with its own GitHub Actions workflow. See its [README](web-e2e-playwright-ts/README.md).
+
 ## Quick start
 
 ```bash
