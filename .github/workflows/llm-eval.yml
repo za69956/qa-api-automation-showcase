@@ -1,0 +1,32 @@
+name: llm-eval
+on:
+  push:
+    paths: ["llm-eval-refill-agent/**", ".github/workflows/llm-eval.yml"]
+  pull_request:
+    paths: ["llm-eval-refill-agent/**"]
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: llm-eval-refill-agent
+    env:
+      DEEPEVAL_TELEMETRY_OPT_OUT: "YES"
+      PROMPTFOO_DISABLE_TELEMETRY: "1"
+      PROMPTFOO_PYTHON: python3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - run: pip install -r requirements.txt
+      - name: DeepEval gate (candidate v2 must pass everything)
+        run: python -m pytest
+      - name: Promptfoo side-by-side v1 vs v2
+        run: npm install --no-audit --no-fund && npx promptfoo eval -c promptfooconfig.yaml --no-cache --no-progress-bar -o reports/promptfoo_results.json || true
+      - name: Release gate from the Promptfoo run
+        run: python scripts/report.py && cat reports/report.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: llm-eval-report, path: llm-eval-refill-agent/reports/ }

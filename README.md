@@ -37,6 +37,8 @@ A bot can make money in USDT and still fail the HODL benchmark.
 
 `web-e2e-playwright-ts/` contains a UI + API + consistency test suite written in Playwright (TypeScript) against a small local invoice app, with its own GitHub Actions workflow. See its [README](web-e2e-playwright-ts/README.md).
 
+`llm-eval-refill-agent/` is an LLM evaluation harness for an AI agent that calls tools: a golden set, DeepEval metrics in pytest, a Promptfoo side-by-side of the current vs candidate agent, and a CI release gate on the false-confirmation rate (the agent says "submitted" when the tool call failed). See its [README](llm-eval-refill-agent/README.md).
+
 ## Quick start
 
 ```bash

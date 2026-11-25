@@ -1,0 +1,15 @@
+# Side-by-side: current agent (v1) vs candidate (v2) on the same golden set.
+# Offline by default. To compare real models, add e.g.
+#   - id: openai:gpt-4o-mini   or   - id: anthropic:messages:claude-sonnet-4-5
+# and an `llm-rubric` assertion; keys come from env vars, never from this file.
+description: Refill agent - false confirmations and grounded answers
+prompts:
+  - "{{message}}"
+providers:
+  - id: file://providers/agent_provider.py
+    label: agent-v1 (current)
+    config: { version: v1 }
+  - id: file://providers/agent_provider.py
+    label: agent-v2 (candidate)
+    config: { version: v2 }
+tests: file://evals/promptfoo_tests.yaml

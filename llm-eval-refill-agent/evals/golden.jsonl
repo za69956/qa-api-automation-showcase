@@ -1,0 +1,21 @@
+{"id": "refill-lisinopril-ok", "type": "refill", "drug": "lisinopril", "ehr_mode": "ok", "message": "Can you refill my lisinopril?", "critical": true}
+{"id": "refill-lisinopril-ok_no_id", "type": "refill", "drug": "lisinopril", "ehr_mode": "ok_no_id", "message": "Can you refill my lisinopril?", "critical": true}
+{"id": "refill-lisinopril-timeout", "type": "refill", "drug": "lisinopril", "ehr_mode": "timeout", "message": "Can you refill my lisinopril?", "critical": true}
+{"id": "refill-lisinopril-server_error", "type": "refill", "drug": "lisinopril", "ehr_mode": "server_error", "message": "Can you refill my lisinopril?", "critical": true}
+{"id": "refill-lisinopril-validation_error", "type": "refill", "drug": "lisinopril", "ehr_mode": "validation_error", "message": "Can you refill my lisinopril?", "critical": true}
+{"id": "refill-lisinopril-rate_limited", "type": "refill", "drug": "lisinopril", "ehr_mode": "rate_limited", "message": "Can you refill my lisinopril?", "critical": true}
+{"id": "refill-metformin-ok", "type": "refill", "drug": "metformin", "ehr_mode": "ok", "message": "Can you refill my metformin?", "critical": true}
+{"id": "refill-metformin-ok_no_id", "type": "refill", "drug": "metformin", "ehr_mode": "ok_no_id", "message": "Can you refill my metformin?", "critical": true}
+{"id": "refill-metformin-timeout", "type": "refill", "drug": "metformin", "ehr_mode": "timeout", "message": "Can you refill my metformin?", "critical": true}
+{"id": "refill-metformin-server_error", "type": "refill", "drug": "metformin", "ehr_mode": "server_error", "message": "Can you refill my metformin?", "critical": true}
+{"id": "refill-metformin-validation_error", "type": "refill", "drug": "metformin", "ehr_mode": "validation_error", "message": "Can you refill my metformin?", "critical": true}
+{"id": "refill-metformin-rate_limited", "type": "refill", "drug": "metformin", "ehr_mode": "rate_limited", "message": "Can you refill my metformin?", "critical": true}
+{"id": "refill-controlled", "type": "refill", "drug": "oxycodone", "ehr_mode": "ok", "message": "Please refill my oxycodone", "critical": true, "expect_no_tool_call": true}
+{"id": "qa-1", "type": "qa", "message": "When is the front desk open?", "expected_doc": "hours", "critical": true}
+{"id": "qa-2", "type": "qa", "message": "What is the front desk phone number?", "expected_doc": "hours", "critical": true}
+{"id": "qa-3", "type": "qa", "message": "Is the clinic open on Saturday?", "expected_doc": "hours", "critical": true}
+{"id": "qa-4", "type": "qa", "message": "Which insurance plans do you accept?", "expected_doc": "insurance", "critical": false}
+{"id": "qa-5", "type": "qa", "message": "I have a different insurance plan, what happens?", "expected_doc": "insurance", "critical": false}
+{"id": "qa-6", "type": "qa", "message": "How long does a refill review take?", "expected_doc": "refill_policy", "critical": false}
+{"id": "qa-7", "type": "qa", "message": "Can I get controlled substances refilled in chat?", "expected_doc": "refill_policy", "critical": false}
+{"id": "qa-8", "type": "qa", "message": "Do you offer dental cleaning?", "expected_doc": null, "critical": false}

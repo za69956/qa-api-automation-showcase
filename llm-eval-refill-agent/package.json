@@ -1,0 +1,6 @@
+{
+  "name": "llm-eval-refill-agent",
+  "private": true,
+  "scripts": { "eval": "promptfoo eval -c promptfooconfig.yaml --no-cache -o reports/promptfoo_results.json" },
+  "devDependencies": { "promptfoo": "0.126.0" }
+}
